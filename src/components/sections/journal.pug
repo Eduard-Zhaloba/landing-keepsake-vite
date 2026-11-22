@@ -1,0 +1,14 @@
+section.journal-section#journal
+    .section-title-wrapper
+        h2 From the journal
+    p.section-subtitle Notes on process, case studies and things that inspire us.
+
+    .journal-grid
+        each post in journalPosts
+            article.journal-card
+                +picture(post.image, post.title, 300, 300, true)
+                .journal-content
+                    span.journal-meta #{post.date} / #{post.category}
+                    h3= post.title
+                    p= post.excerpt
+                    a.read-more(href="#") Read more &gt;

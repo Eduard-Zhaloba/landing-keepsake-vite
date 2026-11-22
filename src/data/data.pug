@@ -1,5 +1,117 @@
-- const navLinks = [{href: '#favourite', text: 'Мої улюблені солодощі'}, {href: '#tip', text: 'Порада від Yummy'}]
+//- Дані навігації (для хедера)
+-
+  const navItems = [
+    { title: 'Home', href: '#', active: true },
+    { title: 'About Us', href: '#about', active: false },
+    { title: 'Our Works', href: '#works', active: false },
+    { title: 'Journal', href: '#journal', active: false },
+    { title: 'Contact', href: '#contact', active: false }
+  ]
 
-- const cards = [{image: 'card1.png', title: 'Червоний мак', description: 'Пралене з додаванням карамельної крихти, пасти ядер горіхів фундука та мигдалюпокрите шоколадною глазурʼю'}, {image: 'card2.png', title: 'Сливки-ленивки', description: 'Світлі вафельні листи, поєднані молочно-вершковою начинкою та покриті глазур’ю.'}, {image: 'card3.png', title: 'Ліщина', description: 'Праліне з додаванням подрібненої та тертої ліщини та мигдалю, покрите шоколадною глазур’ю.'}]
+//- Категорії фільтра та роботи портфоліо (works.pug)
+-
+  const workCategories = ['All', 'Branding', 'Identity', 'Print', 'Web', 'Motion']
 
-- const sweets = ['Чорний шоколад', 'Зефір', 'Пастила', 'Мармелад', 'Мед', 'Халва', 'Цукати']
+  const works = [
+    { title: 'Mock-up Tag', category: 'Branding', image: 'img1.png', alt: 'Mock-up Tag' },
+    { title: 'Piece Paper', category: 'Identity', image: 'img2.jpg', alt: 'Piece Paper' },
+    { title: 'Vinyl Mock', category: 'Print', image: 'img3.jpg', alt: 'Vinyl Mock' },
+    { title: 'Coffee Mock', category: 'Web', image: 'img4.jpg', alt: 'Coffee Mock' },
+    { title: 'Coffee Mock', category: 'Web', image: 'img5.jpg', alt: 'Coffee Mock' },
+    { title: 'Coffee Mock', category: 'Web', image: 'img6.jpg', alt: 'Coffee Mock' }
+  ]
+
+//- Послуги (services.pug)
+-
+  const services = [
+    { icon: 'web', title: 'Web Design', description: 'Donec elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem.' },
+    { icon: 'motion', title: 'Motion Video', description: 'Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula.' },
+    { icon: 'print', title: 'Print Design', description: 'Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget.' },
+    { icon: 'illustration', title: 'Illustration', description: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' }
+  ]
+
+//- Статистика (stats.pug)
+-
+  const stats = [
+    { number: '7518', label: 'Shots Taken' },
+    { number: '3472', label: 'Cups of Coffee' },
+    { number: '2184', label: 'Movies Watched' },
+    { number: '4523', label: 'Awards Won' }
+  ]
+
+//- Клієнти (clients.pug)
+-
+  const clients = [
+    { name: 'CLIENT 1', active: false },
+    { name: 'CLIENT 2', active: true },
+    { name: 'CLIENT 3', active: false },
+    { name: 'CLIENT 4', active: false },
+    { name: 'CLIENT 5', active: false },
+    { name: 'CLIENT 6', active: false }
+  ]
+
+//- Записи журналу (journal.pug)
+-
+  const journalPosts = [
+    {
+      date: 'Oct 13, 2026',
+      category: 'Identity',
+      title: 'Sollicitudin tortor inceptos',
+      excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.',
+      image: 'journal-1.jpg'
+    },
+    {
+      date: 'Oct 23, 2026',
+      category: 'Branding',
+      title: 'Amet inceptos fringilla fusce',
+      excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.',
+      image: 'journal-2.jpg'
+    },
+    {
+      date: 'Sep 19, 2026',
+      category: 'Identity',
+      title: 'Cursus malesuada justo',
+      excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.',
+      image: 'journal-3.jpg'
+    },
+    {
+      date: 'Sep 27, 2026',
+      category: 'Branding',
+      title: 'Ornare cursus bibendum purus',
+      excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.',
+      image: 'journal-4.jpg'
+    }
+  ]
+
+//- Колонки футера та соцмережі (footer.pug)
+-
+  const footerColumns = [
+    {
+      title: 'Studio',
+      links: [
+        { text: 'About us', href: '#' },
+        { text: 'Our works', href: '#' },
+        { text: 'Journal', href: '#' },
+        { text: 'Careers', href: '#' },
+        { text: 'Contact', href: '#' }
+      ]
+    },
+    {
+      title: 'Services',
+      links: [
+        { text: 'Web design', href: '#' },
+        { text: 'Motion video', href: '#' },
+        { text: 'Print design', href: '#' },
+        { text: 'Illustration', href: '#' },
+        { text: 'Brand strategy', href: '#' }
+      ]
+    }
+  ]
+
+  const socials = [
+    { label: 'RSS', symbol: 'rss', href: '#' },
+    { label: 'Facebook', symbol: 'fb', href: '#' },
+    { label: 'Twitter', symbol: 'tw', href: '#' },
+    { label: 'Dribbble', symbol: 'dr', href: '#' },
+    { label: 'Pinterest', symbol: 'p', href: '#' }
+  ]

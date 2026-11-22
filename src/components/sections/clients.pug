@@ -1,0 +1,19 @@
+section.clients-section
+    .section-title-wrapper
+        h2 Our clients
+    .clients-logos
+        each client in clients
+            .client-logo(class={'active-client': client.active})= client.name
+
+    .testimonial-card
+        .testimonial-quotes &ldquo;
+        p.testimonial-text Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus.
+        .testimonial-author
+            .author-avatar JD
+            .author-info
+                strong John Doe
+                span CEO, Company Name
+        .slider-dots
+            span.dot.active
+            span.dot
+            span.dot

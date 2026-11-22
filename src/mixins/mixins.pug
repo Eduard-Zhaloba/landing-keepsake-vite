@@ -1,0 +1,72 @@
+//- 1. Міксин кнопки/посилання з підтримкою block, &attributes та case/when
+mixin btn(text, href, variant = 'primary')
+  - let variantClass = ''
+  case variant
+    when 'primary'
+      - variantClass = 'btn-primary'
+    when 'secondary'
+      - variantClass = 'btn-secondary'
+    default
+      - variantClass = 'btn-primary'
+
+  if href
+    a.btn(href=href, class=variantClass)&attributes(attributes)
+      if block
+        block
+      else
+        | #{text}
+  else
+    button.btn(type="button", class=variantClass)&attributes(attributes)
+      if block
+        block
+      else
+        | #{text}
+
+//- 2. Міксин SVG-іконок через case/when
+mixin icon(name)
+  case name
+    when 'web'
+      svg(width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true")
+        rect(x="2" y="3" width="20" height="14" rx="2")
+        line(x1="8" y1="21" x2="16" y2="21")
+        line(x1="12" y1="17" x2="12" y2="21")
+    when 'motion'
+      svg(width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true")
+        polygon(points="5 3 19 12 5 21 5 3")
+    when 'print'
+      svg(width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true")
+        polyline(points="6 9 6 2 18 2 18 9")
+        path(d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2")
+        rect(x="6" y="14" width="12" height="8")
+    when 'illustration'
+      svg(width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true")
+        path(d="M12 19l7-7 3 3-7 7-3-3z")
+        path(d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z")
+    default
+      span ★
+
+//- 3. Міксин адаптивного зображення (готовий до Завдання 5 з AVIF/WebP + умова lazy)
+mixin picture(src, alt, width, height, lazy = true, sizes = "(min-width: 1280px) 357px, (min-width: 768px) 50vw, 100vw")
+  picture
+    //- Коли згенеруємо AVIF та WebP у Завданні 5, розкоментуємо ці два рядки:
+    //- source(type="image/avif" srcset=`/src/assets/${baseName}-400.avif 400w, /src/assets/${baseName}-800.avif 800w` sizes=sizes)
+    //- source(type="image/webp" srcset=`/src/assets/${baseName}-400.webp 400w, /src/assets/${baseName}-800.webp 800w` sizes=sizes)
+    img(
+      src=`/src/assets/${src}`,
+      alt=alt,
+      width=width,
+      height=height,
+      loading=lazy ? "lazy" : false,
+      fetchpriority=!lazy ? "high" : false,
+      decoding="async"
+    )&attributes(attributes)
+
+//- 4. Міксин картки роботи портфоліо
+mixin work-card(work, index)
+  article.work-card
+    +picture(work.image, work.alt, 600, 432, index > 0)
+    .work-overlay
+      .work-plus-icon +
+      h3 #{work.title}
+      .work-line
+      span.work-category #{work.category}

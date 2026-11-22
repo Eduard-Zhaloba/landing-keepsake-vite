@@ -5,14 +5,21 @@ import path from 'path'
 export default {
     plugins: [
         vituum({
+            pages: {
+                dir: './src/pages',
+                root: './src',
+                normalizeBasePath: true
+            },
             imports: {
                 filenamePattern: {
                     '+.css': [],
                     '+.scss': []
                 }
-            },
+            }
         }),
-        pug({root: './src'}),
+        pug({
+            root: './src'
+        }),
     ],
     resolve: {
         alias: {

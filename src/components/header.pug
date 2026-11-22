@@ -1,4 +1,11 @@
-header.header
-    .header-inner
-        include logo
-        include navigation
+header.site-header
+    a.logo(href="#")
+        span.logo-k k
+        | eepsake
+    nav.desktop-nav(aria-label="Primary navigation")
+        each item in navItems
+            a(href=item.href, class={'active': item.active})= item.title
+    button.burger-btn(aria-label="Open menu", aria-expanded="false")
+        span
+        span
+        span

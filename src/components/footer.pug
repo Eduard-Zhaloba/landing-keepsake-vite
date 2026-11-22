@@ -1,5 +1,25 @@
-footer.footer
-    .footer-outer
-        .footer-inner
-            include logo
-            h4 Приєднуйся і живи зі мною у світі солодощів!
+footer.site-footer#contact
+    .footer-container
+        .newsletter
+            h3 Newsletter
+            p Fresh case studies and design notes, once a month.
+            form.newsletter-form
+                input(type="email", placeholder="Your email address", required)
+                +btn('Subscribe', '', 'primary')(type="submit")
+                label.checkbox-label
+                    input(type="checkbox", required)
+                    |  I agree to the privacy policy
+
+        .footer-links-grid
+            each col in footerColumns
+                .footer-col
+                    h4= col.title
+                    ul
+                        each link in col.links
+                            li: a(href=link.href)= link.text
+
+        .footer-bottom
+            .social-icons
+                each social in socials
+                    a(href=social.href, aria-label=social.label)= social.symbol
+            p.copyright &copy; 2026 Keepsake. All rights reserved.
