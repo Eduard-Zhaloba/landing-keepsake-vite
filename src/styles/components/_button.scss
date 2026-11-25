@@ -8,6 +8,7 @@
   letter-spacing: rem(1);
   padding: rem(14) rem(24);
   width: 100%;
+  user-select: none;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
   border: none;
