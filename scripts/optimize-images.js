@@ -18,9 +18,18 @@ for (const file of imageFiles) {
   for (const width of WIDTHS) {
     const resized = sharp(inputPath).resize({ width, withoutEnlargement: true });
 
-    await resized.clone().avif({ quality: 60 }).toFile(path.join(OUTPUT_DIR, `${name}-${width}.avif`));
-    await resized.clone().webp({ quality: 80 }).toFile(path.join(OUTPUT_DIR, `${name}-${width}.webp`));
-    await resized.clone().jpeg({ quality: 82 }).toFile(path.join(OUTPUT_DIR, `${name}-${width}.jpg`));
+    await resized
+      .clone()
+      .avif({ quality: 60 })
+      .toFile(path.join(OUTPUT_DIR, `${name}-${width}.avif`));
+    await resized
+      .clone()
+      .webp({ quality: 80 })
+      .toFile(path.join(OUTPUT_DIR, `${name}-${width}.webp`));
+    await resized
+      .clone()
+      .jpeg({ quality: 82 })
+      .toFile(path.join(OUTPUT_DIR, `${name}-${width}.jpg`));
   }
 
   console.log(`Оброблено: ${file}`);

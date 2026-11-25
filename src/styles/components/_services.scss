@@ -17,6 +17,7 @@
 
 .service-icon {
   @include flex-center;
+
   width: rem(72);
   height: rem(72);
   background-color: var(--color-white);

@@ -1,12 +1,12 @@
-section.services-section#about
-    .section-title-wrapper
-        h2 What we do
-    p.section-subtitle Maecenas sed diam eget risus varius blandit sit amet non magna.
+section#about.services-section
+  .section-title-wrapper
+    h2 What we do
+  p.section-subtitle Maecenas sed diam eget risus varius blandit sit amet non magna.
 
-    .services-grid
-        each service in services
-            article.service-item
-                .service-icon
-                    +icon(service.icon)
-                h3= service.title
-                p= service.description
+  .services-grid
+    each service in services
+      article.service-item
+        .service-icon
+          +icon(service.icon)
+        h3= service.title
+        p= service.description

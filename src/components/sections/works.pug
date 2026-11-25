@@ -1,13 +1,13 @@
-section.works-section#works
-    .section-title-wrapper
-        h2 Our awesome works
+section#works.works-section
+  .section-title-wrapper
+    h2 Our awesome works
 
-    .chips-container
-        each category, i in workCategories
-            button.chip(type="button", class={'active': i === 0})= category
+  .chips-container
+    each category, i in workCategories
+      button.chip(type='button', class={ active: i === 0 })= category
 
-    .works-grid
-        each work, i in works
-            +work-card(work, i)
+  .works-grid
+    each work, i in works
+      +work-card(work, i)
 
-    +btn('Load more works', '', 'secondary').load-more
+  +btn('Load more works', '', 'secondary').load-more

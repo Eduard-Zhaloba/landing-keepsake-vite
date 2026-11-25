@@ -2,6 +2,7 @@
 
 .btn {
   @include flex-center(row, rem(10));
+
   font-family: var(--font-oswald);
   font-size: rem(12);
   text-transform: uppercase;
@@ -10,7 +11,9 @@
   width: 100%;
   user-select: none;
   cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
   border: none;
 }
 
@@ -35,6 +38,7 @@
 
 .scroll-top-btn {
   @include flex-center;
+
   position: fixed;
   bottom: rem(20);
   right: rem(20);
@@ -43,7 +47,7 @@
   background-color: var(--color-accent);
   color: var(--color-white);
   border-radius: 50%;
-  box-shadow: 0 rem(4) rem(10) rgba(0, 0, 0, 0.2);
+  box-shadow: 0 rem(4) rem(10) rgb(0 0 0 / 20%);
   z-index: 99;
   transition: background-color 0.2s;
 

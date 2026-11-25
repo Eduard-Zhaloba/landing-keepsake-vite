@@ -34,8 +34,8 @@
 
   input[type='email'] {
     padding: rem(14);
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgb(255 255 255 / 8%);
+    border: 1px solid rgb(255 255 255 / 15%);
     color: var(--color-white);
   }
 
@@ -86,7 +86,7 @@
 
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgb(255 255 255 / 10%);
   padding-top: rem(30);
 }
 
@@ -98,9 +98,10 @@
 
   a {
     @include flex-center;
+
     width: rem(36);
     height: rem(36);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(255 255 255 / 10%);
     border-radius: 50%;
     font-size: rem(12);
   }

@@ -62,6 +62,7 @@
 
 .author-avatar {
   @include flex-center;
+
   width: rem(40);
   height: rem(40);
   background-color: var(--color-teal);

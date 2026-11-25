@@ -20,6 +20,7 @@
 
 .logo-k {
   @include flex-center;
+
   display: inline-flex;
   width: rem(34);
   height: rem(34);
@@ -53,6 +54,7 @@
 
   @include mq(lg) {
     @include flex-center;
+
     width: rem(36);
     height: rem(36);
     background-color: var(--color-accent);
@@ -63,6 +65,7 @@
 
 .burger-btn {
   @include button-reset;
+
   width: rem(40);
   height: rem(40);
   display: flex;
