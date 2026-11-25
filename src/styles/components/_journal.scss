@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+.journal-section {
+  padding: var(--section-spacing) var(--container-padding);
+  background-color: var(--color-white);
+}
+
+.journal-card {
+  display: flex;
+  gap: rem(16);
+  align-items: flex-start;
+
+  img {
+    width: rem(96);
+    height: rem(96);
+    object-fit: cover;
+    flex-shrink: 0;
+
+    @include mq(md) {
+      width: rem(150);
+      height: rem(150);
+    }
+  }
+
+  h3 {
+    font-size: rem(15);
+    letter-spacing: rem(0.5);
+    margin-bottom: rem(6);
+  }
+
+  p {
+    font-size: rem(13);
+    margin-bottom: rem(8);
+    color: var(--color-text);
+  }
+}
+
+.journal-meta {
+  font-family: var(--font-oswald);
+  font-size: rem(11);
+  text-transform: uppercase;
+  letter-spacing: rem(1);
+  color: var(--color-muted);
+  display: block;
+  margin-bottom: rem(4);
+}
+
+.read-more {
+  font-family: var(--font-oswald);
+  font-size: rem(12);
+  text-transform: uppercase;
+  letter-spacing: rem(1);
+  color: var(--color-accent);
+  font-weight: 600;
+}

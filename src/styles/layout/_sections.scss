@@ -1,3 +1,45 @@
-section {
-  padding: 3rem 0;
+@use '../abstracts' as *;
+
+.site-header,
+.hero,
+.works-section,
+.cta-section,
+.services-section,
+.stats-section,
+.clients-section,
+.journal-section,
+.site-footer {
+  @include mq(lg) {
+    max-width: rem(1100);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.section-title-wrapper {
+  padding: 0 var(--container-padding);
+  margin-bottom: rem(12);
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+
+  h2 {
+    font-size: rem(18);
+    letter-spacing: rem(1.5);
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: rem(16);
+      height: rem(2);
+      background-color: var(--color-accent);
+      margin-left: rem(10);
+      vertical-align: middle;
+    }
+  }
+}
+
+.section-subtitle {
+  padding: 0 var(--container-padding);
+  margin: 0 0 rem(24);
 }

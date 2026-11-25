@@ -1,16 +1,9 @@
-*, html, body {
-  font-family: "Montserrat", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-a {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-oswald);
+  color: var(--color-text-dark);
+  margin: 0;
+  text-transform: uppercase;
 }

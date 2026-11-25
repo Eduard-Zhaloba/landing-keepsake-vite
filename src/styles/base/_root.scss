@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  --font-oswald: #{$font-oswald};
+  --font-sans: #{$font-sans};
+  --font-logo: #{$font-logo};
+  --container-padding: #{rem(20)};
+  --section-spacing: #{rem(56)};
+
+  @include mq(md) {
+    --container-padding: #{rem(40)};
+    --section-spacing: #{rem(72)};
+  }
+
+  @include mq(lg) {
+    --container-padding: #{rem(90)};
+    --section-spacing: #{rem(90)};
+  }
+}

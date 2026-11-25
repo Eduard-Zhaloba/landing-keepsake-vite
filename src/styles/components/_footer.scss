@@ -1,7 +1,112 @@
-.footer {
-  background: var(--color-secondary);
-  color: white;
+@use '../abstracts' as *;
+
+.site-footer {
+  background-color: var(--color-footer);
+  color: var(--color-white);
+  padding: var(--section-spacing) var(--container-padding);
+}
+
+.footer-container {
+  @include mq(lg) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.newsletter {
+  h3 {
+    color: var(--color-white);
+    font-size: rem(18);
+    margin-bottom: rem(10);
+  }
+
+  p {
+    color: var(--color-muted);
+    margin-bottom: rem(20);
+  }
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  margin-bottom: rem(40);
+
+  input[type='email'] {
+    padding: rem(14);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--color-white);
+  }
+
+  @include mq(lg) {
+    flex-direction: row;
+    max-width: rem(450);
+  }
+}
+
+.checkbox-label {
+  font-size: rem(12);
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+}
+
+.footer-links-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: rem(40);
+
+  @include mq(lg) {
+    justify-content: flex-start;
+    gap: rem(100);
+  }
+}
+
+.footer-col {
+  h4 {
+    color: var(--color-white);
+    font-size: rem(14);
+    margin-bottom: rem(15);
+    letter-spacing: rem(1);
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
+
+  a {
+    color: var(--color-muted);
+    font-size: rem(13);
+  }
+}
+
+.footer-bottom {
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: rem(30);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: rem(12);
+  margin-bottom: rem(20);
+
+  a {
+    @include flex-center;
+    width: rem(36);
+    height: rem(36);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    font-size: rem(12);
+  }
+}
+
+.copyright {
+  font-size: rem(12);
+  color: var(--color-muted);
 }

@@ -1,15 +1,83 @@
-@use '../utils/mixins' as *;
+@use '../abstracts' as *;
 
-.header {
-  // declare mixins before styles
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem(20) var(--container-padding);
+  background-color: var(--color-white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
+.logo {
+  font-family: var(--font-logo);
+  font-size: rem(22);
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.logo-k {
   @include flex-center;
-  background: var(--color-primary);
-  color: white;
-  padding: 1rem;
-  text-align: center;
+  display: inline-flex;
+  width: rem(34);
+  height: rem(34);
+  background-color: var(--color-text-dark);
+  color: var(--color-white);
+  border-radius: 50%;
+  margin-right: rem(4);
+}
 
-  h1 {
-    font-size: 2rem;
+.desktop-nav {
+  display: none;
+
+  @include mq(lg) {
+    display: flex;
+    gap: rem(28);
+    align-items: center;
+    font-family: var(--font-oswald);
+    font-size: rem(13);
+    text-transform: uppercase;
+    letter-spacing: rem(1);
+
+    a:hover,
+    a.active {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.favourites-btn {
+  display: none;
+
+  @include mq(lg) {
+    @include flex-center;
+    width: rem(36);
+    height: rem(36);
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-radius: 50%;
+  }
+}
+
+.burger-btn {
+  @include button-reset;
+  width: rem(40);
+  height: rem(40);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: rem(6);
+
+  span {
+    display: block;
+    width: rem(24);
+    height: rem(2);
+    background-color: var(--color-text-dark);
+  }
+
+  @include mq(lg) {
+    display: none;
   }
 }

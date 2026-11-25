@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+.hero {
+  background-color: var(--color-bg-light);
+  padding: var(--section-spacing) var(--container-padding);
+  text-align: left;
+
+  h1 {
+    font-size: rem(26);
+    font-weight: 300;
+    letter-spacing: rem(3);
+    line-height: 1.25;
+    margin-bottom: rem(20);
+
+    @include mq(md) {
+      font-size: rem(32);
+    }
+
+    @include mq(lg) {
+      font-size: rem(40);
+    }
+  }
+
+  p {
+    margin-bottom: rem(30);
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+
+  @include mq(md) {
+    flex-direction: row;
+
+    .btn {
+      width: auto;
+    }
+  }
+}

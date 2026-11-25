@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.cta-section {
+  padding: var(--section-spacing) var(--container-padding);
+  text-align: center;
+  background-color: var(--color-white);
+
+  h2 {
+    font-size: rem(22);
+    letter-spacing: rem(3);
+    margin-bottom: rem(20);
+  }
+}

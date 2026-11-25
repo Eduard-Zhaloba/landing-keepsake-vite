@@ -1,4 +1,64 @@
-.container {
-  width: min(1200px, 90%);
-  margin-inline: auto;
+@use '../abstracts' as *;
+
+.works-grid {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  padding: 0 var(--container-padding);
+  margin-bottom: rem(20);
+
+  @include mq(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq(lg) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(14);
+  }
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  margin-top: rem(24);
+
+  @include mq(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(40);
+  }
+
+  @include mq(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(30) rem(20);
+  text-align: center;
+
+  @include mq(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.journal-grid {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  margin-top: rem(30);
+
+  @include mq(md) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  @include mq(lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(40);
+  }
 }
