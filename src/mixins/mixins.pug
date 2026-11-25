@@ -45,14 +45,22 @@ mixin icon(name)
     default
       span ★
 
-//- 3. Міксин адаптивного зображення (готовий до Завдання 5 з AVIF/WebP + умова lazy)
+//- 3. Міксин адаптивного зображення (AVIF + WebP + JPEG fallback)
 mixin picture(src, alt, width, height, lazy = true, sizes = "(min-width: 1280px) 357px, (min-width: 768px) 50vw, 100vw")
+  - const baseName = src.replace(/\.[^.]+$/, '')
   picture
-    //- Коли згенеруємо AVIF та WebP у Завданні 5, розкоментуємо ці два рядки:
-    //- source(type="image/avif" srcset=`/src/assets/${baseName}-400.avif 400w, /src/assets/${baseName}-800.avif 800w` sizes=sizes)
-    //- source(type="image/webp" srcset=`/src/assets/${baseName}-400.webp 400w, /src/assets/${baseName}-800.webp 800w` sizes=sizes)
+    source(
+      type="image/avif"
+      srcset=`./images/${baseName}-400.avif 400w, ./images/${baseName}-800.avif 800w`
+      sizes=sizes
+    )
+    source(
+      type="image/webp"
+      srcset=`./images/${baseName}-400.webp 400w, ./images/${baseName}-800.webp 800w`
+      sizes=sizes
+    )
     img(
-      src=`/src/assets/${src}`,
+      src=`./images/${baseName}-800.jpg`,
       alt=alt,
       width=width,
       height=height,
