@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-.site-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,78 +9,83 @@
   position: sticky;
   top: 0;
   z-index: 100;
-}
 
-.logo {
-  font-family: var(--font-logo);
-  font-size: rem(22);
-  font-weight: 700;
-  color: var(--color-text-dark);
-}
+  &__logo {
+    font-family: var(--font-logo);
+    font-size: rem(22);
+    font-weight: 700;
+    color: var(--color-text-dark);
+  }
 
-.logo-k {
-  @include flex-center;
+  &__logo-icon {
+    @include flex-center;
 
-  display: inline-flex;
-  width: rem(34);
-  height: rem(34);
-  background-color: var(--color-text-dark);
-  color: var(--color-white);
-  border-radius: 50%;
-  margin-right: rem(4);
-}
+    display: inline-flex;
+    width: rem(34);
+    height: rem(34);
+    background-color: var(--color-text-dark);
+    color: var(--color-white);
+    border-radius: 50%;
+    margin-right: rem(4);
+  }
 
-.desktop-nav {
-  display: none;
+  &__nav {
+    display: none;
 
-  @include mq(lg) {
-    display: flex;
-    gap: rem(28);
-    align-items: center;
-    font-family: var(--font-oswald);
-    font-size: rem(13);
-    text-transform: uppercase;
-    letter-spacing: rem(1);
+    @include mq(lg) {
+      display: flex;
+      gap: rem(28);
+      align-items: center;
+      font-family: var(--font-oswald);
+      font-size: rem(13);
+      text-transform: uppercase;
+      letter-spacing: rem(1);
+    }
+  }
 
-    a:hover,
-    a.active {
+  &__nav-link {
+    &:hover {
+      color: var(--color-accent);
+    }
+
+    &--active {
       color: var(--color-accent);
     }
   }
-}
 
-.favourites-btn {
-  display: none;
+  &__favourites-btn {
+    display: none;
 
-  @include mq(lg) {
-    @include flex-center;
+    @include mq(lg) {
+      @include flex-center;
 
-    width: rem(36);
-    height: rem(36);
-    background-color: var(--color-accent);
-    color: var(--color-white);
-    border-radius: 50%;
+      width: rem(36);
+      height: rem(36);
+      background-color: var(--color-accent);
+      color: var(--color-white);
+      border-radius: 50%;
+    }
   }
-}
 
-.burger-btn {
-  @include button-reset;
+  &__burger {
+    @include button-reset;
 
-  width: rem(40);
-  height: rem(40);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: rem(6);
+    width: rem(40);
+    height: rem(40);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: rem(6);
 
-  span {
+    @include mq(lg) {
+      display: none;
+    }
+  }
+
+  &__burger-line {
     display: block;
     width: rem(24);
     height: rem(2);
     background-color: var(--color-text-dark);
-  }
-
-  @include mq(lg) {
-    display: none;
   }
 }
